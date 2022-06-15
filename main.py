@@ -1,32 +1,50 @@
 import random
 
-searching = random.randint(1,100)
+searching = random.randint(1, 100)
 
-print("And now i will generate a random number between 1 and 100.")
+print("And now I will generate a random number between 1 and 100.")
 # print(searching)
 print("You will have only 10 attempts. Can you guess which one ?")
 
-for i in range(10):
 
-    try:
-        guess = int(input("Make your guess:"))
+def make_guesses():
+    """
+    Input digit to guess searching
+    Make 10 attempts
+    :return:
+    """
+    for i in range(10):
 
-        if 0 == guess or guess > 100:
-            print("Are you sure that you understand the limits ? You lose your attempt.")
-        else:
+        try:
+            guess = int(input("Make your guess:"))
 
-            if searching < guess:
-                print(str(guess) + " is above.")
-                print(i)
-            elif searching > guess:
-                print(str(guess) + " is below.")
-                print(i)
-            elif searching == guess:
-                print("Finally ! You are the winner !")
-                exit()
+            if 0 == guess or guess > 100 or guess < 0:
+                print(
+                    "Are you sure that you understand the limits ? You lose your attempt."
+                )
+            else:
 
-    except ValueError:
-        print("Do not be so inattentive. Check the conditions. You also lost your attempt.")
+                if searching < guess:
+                    print(str(guess) + " is above.")
+                    print(i)
+                elif searching > guess:
+                    print(str(guess) + " is below.")
+                    print("Attempt number " + str(i))
+                elif searching == guess:
+                    print("Finally ! You are the winner !")
+                    exit()
 
-    if i == 9:
-        print("Your attempts were successfully failed. The correct answer was " + str(searching))
+        except ValueError:
+            print(
+                "Do not be so inattentive. Check the conditions. You also lost your attempt."
+            )
+
+        if i == 9:
+            print(
+                "Your attempts were successfully failed. The correct answer was "
+                + str(searching)
+            )
+
+
+if __name__ == "__main__":
+    make_guesses()

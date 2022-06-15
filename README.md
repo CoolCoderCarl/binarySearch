@@ -1,9 +1,12 @@
-# Binary Search
+# binary search
+Guess digit using the binary search
 
-## Description
-The simple program which get 10 attempts to guess a conceived number between 1 and 100  
+## Prehistory
+The simple program which get 10 attempts to guess a conceived number between 1 and 100.
 
-## How to start
-The program was run in Win10 system with python3.9
+> Let's search it easy way  
+> (c) Author
 
-`python main.py` or `python39 main.py`
+You can find many digits as you want.
+
+Enjoy.
